@@ -13,11 +13,13 @@ setup_logging()
 from app.models.student import Student  # noqa: F401
 from app.models.teacher import Teacher  # noqa: F401
 from app.models.user import User  # noqa: F401
+from app.models.academic_session import AcademicSession  # noqa: F401
 
 # Routers
 from app.routers.student import router as student_router
 from app.routers.teacher import router as teacher_router
 from app.routers.auth import router as auth_router
+from app.routers.academic_session import router as academic_session_router
 
 # Create all database tables on startup
 Base.metadata.create_all(bind=engine)
@@ -57,6 +59,11 @@ app.include_router(teacher_router)
 # Register the authentication router
 # ---------------------------------------------------------------------------
 app.include_router(auth_router)
+
+# ---------------------------------------------------------------------------
+# Register the academic sessions router
+# ---------------------------------------------------------------------------
+app.include_router(academic_session_router)
 
 
 # ---------------------------------------------------------------------------
