@@ -14,12 +14,26 @@ from app.models.student import Student  # noqa: F401
 from app.models.teacher import Teacher  # noqa: F401
 from app.models.user import User  # noqa: F401
 from app.models.academic_session import AcademicSession  # noqa: F401
+from app.models.department import Department  # noqa: F401
+from app.models.program import Program  # noqa: F401
+from app.models.semester import Semester  # noqa: F401
+from app.models.course import Course  # noqa: F401
+from app.models.subject import Subject  # noqa: F401
+from app.models.attendance import Attendance  # noqa: F401
+from app.models.section import Section  # noqa: F401
 
 # Routers
 from app.routers.student import router as student_router
 from app.routers.teacher import router as teacher_router
 from app.routers.auth import router as auth_router
 from app.routers.academic_session import router as academic_session_router
+from app.routers.department import router as department_router
+from app.routers.program import router as program_router
+from app.routers.semester import router as semester_router
+from app.routers.course import router as course_router
+from app.routers.subject import router as subject_router
+from app.routers.attendance import router as attendance_router
+from app.routers.section import router as section_router
 
 # Create all database tables on startup
 Base.metadata.create_all(bind=engine)
@@ -64,6 +78,41 @@ app.include_router(auth_router)
 # Register the academic sessions router
 # ---------------------------------------------------------------------------
 app.include_router(academic_session_router)
+
+# ---------------------------------------------------------------------------
+# Register the departments router
+# ---------------------------------------------------------------------------
+app.include_router(department_router)
+
+# ---------------------------------------------------------------------------
+# Register the programs router
+# ---------------------------------------------------------------------------
+app.include_router(program_router)
+
+# ---------------------------------------------------------------------------
+# Register the semesters router
+# ---------------------------------------------------------------------------
+app.include_router(semester_router)
+
+# ---------------------------------------------------------------------------
+# Register the courses router
+# ---------------------------------------------------------------------------
+app.include_router(course_router)
+
+# ---------------------------------------------------------------------------
+# Register the subjects router
+# ---------------------------------------------------------------------------
+app.include_router(subject_router)
+
+# ---------------------------------------------------------------------------
+# Register the attendance router
+# ---------------------------------------------------------------------------
+app.include_router(attendance_router)
+
+# ---------------------------------------------------------------------------
+# Register the sections router
+# ---------------------------------------------------------------------------
+app.include_router(section_router)
 
 
 # ---------------------------------------------------------------------------
