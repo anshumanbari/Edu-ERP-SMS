@@ -27,6 +27,7 @@ from app.models.classroom import Classroom  # noqa: F401
 from app.models.timetable import Timetable  # noqa: F401
 from app.models.examination import Examination  # noqa: F401
 from app.models.exam_mark import ExamMark  # noqa: F401
+from app.models.result import Result  # noqa: F401
 
 # Routers
 from app.routers.student import router as student_router
@@ -46,6 +47,7 @@ from app.routers.classroom import router as classroom_router
 from app.routers.timetable import router as timetable_router
 from app.routers.examination import router as examination_router
 from app.routers.exam_mark import router as exam_mark_router
+from app.routers.result import router as result_router
 
 # Create all database tables on startup
 Base.metadata.create_all(bind=engine)
@@ -155,6 +157,11 @@ app.include_router(examination_router)
 # Register the exam marks router
 # ---------------------------------------------------------------------------
 app.include_router(exam_mark_router)
+
+# ---------------------------------------------------------------------------
+# Register the results router
+# ---------------------------------------------------------------------------
+app.include_router(result_router)
 
 
 # ---------------------------------------------------------------------------
