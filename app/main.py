@@ -28,6 +28,8 @@ from app.models.timetable import Timetable  # noqa: F401
 from app.models.examination import Examination  # noqa: F401
 from app.models.exam_mark import ExamMark  # noqa: F401
 from app.models.result import Result  # noqa: F401
+from app.models.fee_structure import FeeStructure  # noqa: F401
+from app.models.fee_payment import FeePayment  # noqa: F401
 
 # Routers
 from app.routers.student import router as student_router
@@ -48,6 +50,8 @@ from app.routers.timetable import router as timetable_router
 from app.routers.examination import router as examination_router
 from app.routers.exam_mark import router as exam_mark_router
 from app.routers.result import router as result_router
+from app.routers.fee_structure import router as fee_structure_router
+from app.routers.fee_payment import router as fee_payment_router
 
 # Create all database tables on startup
 Base.metadata.create_all(bind=engine)
@@ -162,6 +166,16 @@ app.include_router(exam_mark_router)
 # Register the results router
 # ---------------------------------------------------------------------------
 app.include_router(result_router)
+
+# ---------------------------------------------------------------------------
+# Register the fee structures router
+# ---------------------------------------------------------------------------
+app.include_router(fee_structure_router)
+
+# ---------------------------------------------------------------------------
+# Register the fee payments router
+# ---------------------------------------------------------------------------
+app.include_router(fee_payment_router)
 
 
 # ---------------------------------------------------------------------------
