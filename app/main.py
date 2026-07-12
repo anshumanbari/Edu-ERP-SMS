@@ -22,6 +22,7 @@ from app.models.subject import Subject  # noqa: F401
 from app.models.attendance import Attendance  # noqa: F401
 from app.models.section import Section  # noqa: F401
 from app.models.enrollment import Enrollment  # noqa: F401
+from app.models.teacher_assignment import TeacherAssignment  # noqa: F401
 
 # Routers
 from app.routers.student import router as student_router
@@ -36,6 +37,7 @@ from app.routers.subject import router as subject_router
 from app.routers.attendance import router as attendance_router
 from app.routers.section import router as section_router
 from app.routers.enrollment import router as enrollment_router
+from app.routers.teacher_assignment import router as teacher_assignment_router
 
 # Create all database tables on startup
 Base.metadata.create_all(bind=engine)
@@ -120,6 +122,11 @@ app.include_router(section_router)
 # Register the enrollments router
 # ---------------------------------------------------------------------------
 app.include_router(enrollment_router)
+
+# ---------------------------------------------------------------------------
+# Register the teacher assignments router
+# ---------------------------------------------------------------------------
+app.include_router(teacher_assignment_router)
 
 
 # ---------------------------------------------------------------------------
